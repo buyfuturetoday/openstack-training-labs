@@ -37,7 +37,7 @@ Install_Cinder() {
     
     # 5. Format the disks -- see if something else is available instead of
     # fdisk
-    format_volumes() # Need Expert Advice on this ....
+    bash format_volumes # Need Expert Advice on this ....
     
     pvcreate /dev/sdb
     vgcreate cinder-volumes /dev/sdb
@@ -45,3 +45,4 @@ Install_Cinder() {
     # 6. Restart Cinder Related Services
     for i in $( ls /etc/init.d/cinder-* ); do $i restart; done
 }
+Install_Cinder

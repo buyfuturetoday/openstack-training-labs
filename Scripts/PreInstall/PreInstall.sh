@@ -43,7 +43,7 @@ configure_networks(){
     if [ "$1" == "single-node" ]; then
         # Copy Single Node interfaces file to /etc/network/
         echo "Configuring Network for Single Node"
-        mv Templates/interfaces-single /etc/network/interfaces
+        cp --no-preserve=mode,ownsership Templates/interfaces-single /etc/network/interfaces
 
     else
         if [ "$1" == "multi-node" ]; then
@@ -52,18 +52,18 @@ configure_networks(){
                 "control")
                     ## Configure network for control node
                     echo "Configuring Network for Control Node"
-                    mv Templates/interfaces-control /etc/network/interfaces
+                    cp --no-preserve=mode,ownership Templates/interfaces-control /etc/network/interfaces
                     ;;
 
                 "compute")
                     ## Configure network for compute node.
                     echo "Configuring Network for Compute Node"
-                    mv Templates/interfaces-compute /etc/network/interfaces
+                    cp --no-preserve=mode,ownership Templates/interfaces-compute /etc/network/interfaces
                     ;;
                 "network")
                     ## Configure network for network node.
                     echo "Configuring Network for Network Node"
-                    mv Templates/interfaces-network /etc/network/interfaces
+                    cp --no-preserve=mode,ownership Templates/interfaces-network /etc/network/interfaces
                     ;;
                 *)
                     echo "Invalid Input, cannot figure out which node this is. Error!!!"

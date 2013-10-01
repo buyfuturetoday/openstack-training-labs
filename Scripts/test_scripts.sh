@@ -45,7 +45,7 @@ if [ "$cont" == "Y" -o "$cont" == "y" ]; then
     # Missing Exception Handlers :((, would have been very handy here
     echo "You Pressed Yes."
     echo -e "${BBla}Testing PreInstall"
-    bash PreInstall/PreInstall.sh
+    bash PreInstall/PreInstall.sh "single-node"
 
     echo -e "${BBla}Testing Keystone"
     bash Keystone/Keystone.sh
