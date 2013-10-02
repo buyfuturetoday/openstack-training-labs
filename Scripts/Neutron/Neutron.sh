@@ -25,7 +25,7 @@ Neutron_SingleNode() {
     ovs-vsctl add-br br-int
     #br-ex is used to make to access the internet (not covered in this guide)
     ovs-vsctl add-br br-ex
-    cp --no-preserve=mode,ownership Templates/SingleNode/interfaces /etc/network/interfaces
+    cp --no-preserve=mode,ownership Templates/SingleNode/interfaces-single /etc/network/interfaces
     ovs-vsctl add-port br-ex eth1
     #iptables --table nat --append POSTROUTING --out-interface eth2 -j MASQUERADE # May need to do this ... 
     #ptables --append FORWARD --in-interface br-ex -j ACCEPT
