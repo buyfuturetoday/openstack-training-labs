@@ -31,7 +31,7 @@ Neutron_SingleNode() {
     #ptables --append FORWARD --in-interface br-ex -j ACCEPT
 
     # 2. Configure Quantum Configuration files
-    cp --no-preserve=mode,ownership Templates/SingleNode/plugins/ovs_quantum_plugin.ini /etc/quantum/plugins/openvswitch/ovs_quantum_plugin.ini
+    cp --no-preserve=mode,ownership Templates/SingleNode/ovs_quantum_plugin.ini /etc/quantum/plugins/openvswitch/ovs_quantum_plugin.ini
     cp --no-preserve=mode,ownership Templates/SingleNode/api-paste.ini /etc/quantum/api-paste.ini
     cp --no-preserve=mode,ownership Templates/SingleNode/quantum.conf /etc/quantum/quantum.conf
     cp --no-preserve=mode,ownership Templates/SingleNode/metadata_agent.ini /etc/quantum/metadata_agent.ini
