@@ -1,4 +1,4 @@
-#!/bin/ssh
+#!/bin/bash
 #
 # About:Setup Dependences for Virtual Box Sandbox
 #       meant for OpenStack Labs.

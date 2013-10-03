@@ -22,7 +22,7 @@ Whi='\e[0;37m';     BWhi='\e[1;37m';    UWhi='\e[4;37m';    IWhi='\e[0;97m';    
 
 # Ignore the above content its for decorations
 echo -e "${On_Bla}"
-
+source Keystone/Scripts/Credentials.sh
 echo -e " 
     ${BIblu}Run this script from inside your Virtual Machine or test machine
     this script is meant for testing the Scripts related to OpenStack and
@@ -45,28 +45,28 @@ if [ "$cont" == "Y" -o "$cont" == "y" ]; then
     # Missing Exception Handlers :((, would have been very handy here
     echo "You Pressed Yes."
     echo -e "${BBla}Testing PreInstall"
-    bash PreInstall/PreInstall.sh "single-node"
+    bash PreInstall/PreInstall.sh "single-node" > Logs/PreInstall.log
 
     echo -e "${BBla}Testing Keystone"
-    bash Keystone/Keystone.sh
+    bash Keystone/Keystone.sh > Logs/Keystone.log
 
     echo -e "${BBla}Testing Glance"
-    bash Glance/Glance.sh
+    bash Glance/Glance.sh > Logs/Glance.log
 
     echo -e "${BBla}Testing Cinder"
-    bash Cinder/Cinder.sh
+    bash Cinder/Cinder.sh > Logs/Cinder.log
 
     echo -e "${BBla}Testing Neutron"
-    bash Neutron/Neutron.sh
+    bash Neutron/Neutron.sh > Logs/Neutron.log
 
     echo -e "${BBla}Testing Nova"
-    bash Nova/Nova.sh
+    bash Nova/Nova.sh > Logs/Nova.log
 
     echo -e "${BBla}Testing Horizon"
-    bash Horizon/Horizon.sh
+    bash Horizon/Horizon.sh > Logs/Horizon.log
 
     echo -e "${BBla}Testing PostInstall"
-    bash PostInstall/PostInstall.sh
+    bash PostInstall/PostInstall.sh > Logs/PostInstall.log
 fi
 echo -e "Mostly the tests run fine ... although Im not sure !!! Please Read the Terminal Messages Carefully."
 echo -e "${RCol}"
