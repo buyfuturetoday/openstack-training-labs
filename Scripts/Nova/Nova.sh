@@ -28,7 +28,7 @@ Nova_SingleNode() {
     cp --no-preserve=mode,ownership Templates/SingleNode/libvirt/libvirtd.conf /etc/libvirt/libvirtd.conf
     cp --no-preserve=mode,ownership Templates/SingleNode/libvirt/libvirt-bin.conf /etc/init/libvirt-bin.conf
     cp --no-preserve=mode,ownership Templates/SingleNode/libvirt/libvirt-bin /etc/default/libvirt-bin
-    
+    cp --no-preserve=mode,ownership Templates/SingleNode/nova/nova-compute.conf /etc/nova/nova-compute.conf 
     # Destroy Default Virtual Bridges
     virsh net-destroy default
     virsh net-undefine default
