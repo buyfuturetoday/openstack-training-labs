@@ -39,7 +39,7 @@ Install_Cinder() {
     # fdisk
     bash format_volumes # Need Expert Advice on this ....
     
-    pvcreate /dev/sdb
+    pvcreate -ff /dev/sdb
     vgcreate cinder-volumes /dev/sdb
     
     # 6. Restart Cinder Related Services
