@@ -18,7 +18,7 @@ echo "Internet connection is not required for this script to run"
 glance_conf(){
 
     #1. Install Glance
-    apt-get install -y glance
+    apt-get install -y --force-yes glance
 
     #2. Configure the Config Files
     cp --no-preserve=mode,ownership Templates/glance-api.conf /etc/glance/glance-api.conf

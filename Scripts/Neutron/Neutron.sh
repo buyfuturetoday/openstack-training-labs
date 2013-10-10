@@ -19,7 +19,7 @@ echo "Internet connection is not required for this script to run"
 Neutron_SingleNode() {
 
     # 1. Install Neutron, OVS etc.
-    apt-get install -y quantum-server openvswitch-switch openvswitch-datapath-dkms quantum-plugin-openvswitch quantum-plugin-openvswitch-agent dnsmasq quantum-dhcp-agent quantum-l3-agent
+    apt-get install -y --force-yes quantum-server openvswitch-switch openvswitch-datapath-dkms quantum-plugin-openvswitch quantum-plugin-openvswitch-agent dnsmasq quantum-dhcp-agent quantum-l3-agent
     
     #br-int will be used for VM integration
     ovs-vsctl add-br br-int

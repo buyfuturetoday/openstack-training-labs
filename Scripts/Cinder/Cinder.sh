@@ -19,7 +19,7 @@ echo "Internet connection is not required for this script to run"
 Install_Cinder() {
 
     # 1. Install Cinder
-    apt-get install -y cinder-api cinder-scheduler cinder-volume iscsitarget open-iscsi iscsitarget-dkms
+    apt-get install -y --force-yes cinder-api cinder-scheduler cinder-volume iscsitarget open-iscsi iscsitarget-dkms
     
     # 2. Configure iscsi services
     sed -i 's/false/true/g' /etc/default/iscsitarget

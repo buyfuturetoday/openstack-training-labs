@@ -19,7 +19,7 @@ echo "Internet connection is not required for this script to run"
 Nova_SingleNode() {
 
     # 1. Install Nova, OVS etc.
-    apt-get install -y kvm libvirt-bin pm-utils nova-api nova-cert novnc nova-consoleauth nova-scheduler nova-novncproxy nova-doc nova-conductor nova-compute-kvm    
+    apt-get install -y --force-yes kvm libvirt-bin pm-utils nova-api nova-cert novnc nova-consoleauth nova-scheduler nova-novncproxy nova-doc nova-conductor nova-compute-kvm    
 
     # 2. Configure Nova Configuration files
     cp --no-preserve=mode,ownership Templates/SingleNode/nova/api-paste.ini /etc/nova/api-paste.ini

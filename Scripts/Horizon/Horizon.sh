@@ -19,7 +19,7 @@ echo "Internet connection is not required for this script to run"
 Install_Horizon() {
 
     # 1. Install Horizon
-    apt-get install -y openstack-dashboard memcached
+    apt-get install -y --force-yes openstack-dashboard memcached
     
     # 2. Restart Apache2 and Memcached
     service apache2 restart

@@ -19,18 +19,18 @@
 # Internet is required for this script to run.
 
 # Add a Few required packages
-apt-get install -y ubuntu-cloud-keyring python-software-properties software-properties-common python-keyring
+apt-get install -y --force-yes ubuntu-cloud-keyring python-software-properties software-properties-common python-keyring
 # Update apt-get
-apt-get -y update 
+apt-get -y --force-yes update 
 
 # Add OpenStack Grizzly Repo.
 echo deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/grizzly main >> /etc/apt/sources.list.d/grizzly.list
 
 # Update apt-get, Upgrade Installed Packages and Kernel Upgrade
-apt-get -y --download-only update
-apt-get -y --download-only upgrade
-apt-get -y --download-only dist-upgrade
-apt-get install -y --download-only ubuntu-cloud-keyring python-software-properties software-properties-common python-keyring
+apt-get -y --force-yes --download-only update
+apt-get -y --force-yes --download-only upgrade
+apt-get -y --force-yes --download-only dist-upgrade
+apt-get install -y --force-yes --download-only ubuntu-cloud-keyring python-software-properties software-properties-common python-keyring
 
 # Configure the Network Interfaces by using the templates in the networking
 # part of this folder.
@@ -84,7 +84,7 @@ configure_networks(){
 
 single_node() {
     #Install All package on the given Virtual Machine ...
-    apt-get install -y --download-only mysql-server python-mysqldb rabbitmq-server ntp vlan bridge-utils \
+    apt-get install -y --force-yes --download-only mysql-server python-mysqldb rabbitmq-server ntp vlan bridge-utils \
         keystone glance openvswitch-switch openvswitch-datapath-dkms quantum-server quantum-plugin-openvswitch \
         quantum-plugin-openvswitch-agent dnsmasq quantum-dhcp-agent quantum-l3-agent cpu-checker kvm libvirt-bin \
         pm-utils nova-api nova-cert novnc nova-consoleauth nova-scheduler nova-novncproxy nova-doc nova-conductor \
