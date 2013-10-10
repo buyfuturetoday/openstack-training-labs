@@ -32,6 +32,11 @@ apt-get -y --force-yes --download-only upgrade
 apt-get -y --force-yes --download-only dist-upgrade
 apt-get install -y --force-yes --download-only ubuntu-cloud-keyring python-software-properties software-properties-common python-keyring
 
+echo " Downloading Cirros Cloud Image"
+wget http://download.cirros-cloud.net/0.3.1/cirros-0.3.1-x86_64-disk.img
+
+#4. Upload Cirros Image to Glance
+
 # Configure the Network Interfaces by using the templates in the networking
 # part of this folder.
 
