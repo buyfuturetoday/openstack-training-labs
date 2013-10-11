@@ -79,8 +79,13 @@ keystone_conf() {
 
 
 # Create required MySQL Databases and Populate It.
-echo "Enter MySQL root pass"
-read MySQL_RPaSS
+if [ "$#" -ne 1 ]; then
+    # Create required MySQL Databases and Populate It.
+    echo "Enter MySQL root pass"
+    read MySQL_RPaSS
+else
+    MySQL_RPaSS=$1
+fi
 
 echo "Running pre_keystone"
 pre_keystone
