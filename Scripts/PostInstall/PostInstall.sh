@@ -16,6 +16,11 @@ read Tenant_ID
 keystone user-create --name="trainee" --pass="cloud" --tenant-id $Tenant_ID --email=user_one@domain.com
 echo "Enter User ID"
 read User_ID
+keystone role-list
+
+echo "Enter Keystone Role"
+read role_id
+
 keystone user-role-add --tenant-id $Tenant_ID  --user-id $User_ID --role-id $role_id
 
 # Create Networks
@@ -32,7 +37,7 @@ echo "Enter Router ID"
 read training_router
 
 # Add Router to L3 Agent
-quantum agent-list (to get the l3 agent ID)
+quantum agent-list #(to get the l3 agent ID)
 echo "Enter L3 agent ID"
 read l3_agent_ID
 quantum l3-agent-router-add $l3_agent_ID training_router
