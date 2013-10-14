@@ -6,7 +6,7 @@ iface lo inet loopback
 
 # Virtual Box NAT -- for internet access to VM
 auto eth2
-iface eth2 inet static
+iface eth2 inet dhcp
 
 # OpenStack Single Node.
 
